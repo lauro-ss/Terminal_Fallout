@@ -73,19 +73,32 @@ nav ul li:last-child {
   padding-top: 8px;
 }
 #verde {
-  color: rgb(19, 192, 25);
+  border-style: solid;
+  border-width: 7px;
+  border-radius: 3px;
+  border-color: rgb(19, 192, 25);
 }
 #laranja {
-  color: rgb(199, 145, 25);
+  border-style: solid;
+  border-width: 7px;
+  border-radius: 3px;
+  border-color: rgb(199, 145, 25);
 }
 #azul {
-  color: rgb(61, 166, 200);
+  border-style: solid;
+  border-width: 7px;
+  border-radius: 3px;
+  border-color: rgb(61, 166, 200);
 }
 #roxo {
-  color: rgb(160, 80, 175);
+  border-style: solid;
+  border-width: 7px;
+  border-radius: 3px;
+  border-color: rgb(160, 80, 175);
 }
-.fa-square {
-  padding-left: 12px;
+.pred {
+  cursor: pointer;
+  margin-left: 12px;
 }
 
 .menu-terminal {
