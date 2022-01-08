@@ -31,18 +31,24 @@ function changeColor(){
             RGBColor[i].value = 0;
         }
     }
-    console.log( "rgb"+'('+RGBColor[0].value+','+RGBColor[1].value+','+RGBColor[2].value+')');
+    
     mainColor[0].style.color = "rgb"+'('+RGBColor[0].value+','+RGBColor[1].value+','+RGBColor[2].value+')'
-    for(let i = 0; i < 3; i++){
+    for(let i = 0; i < mouse_word.length; i++){
+        mouse_word[i].style.color = "rgb"+'('+RGBColor[0].value+','+RGBColor[1].value+','+RGBColor[2].value+')';
+    }
+ 
+    for(let i = 0; i < RGBColor.length; i++){
         RGBColor[i].style.color = "rgb"+'('+RGBColor[0].value+','+RGBColor[1].value+','+RGBColor[2].value+')'
     }
-    for(let i = 0; i <= 56; i++){
+    
+    for(let i = 0; i < mouse_word.length; i++){
         mouse_word[i].addEventListener('mouseover', function(){
-            mouse_word[i].style.backgroundColor = "rgb"+'('+RGBColor[0].value+','+RGBColor[1].value+','+RGBColor[2].value+')';
-            mouse_word[i].style.color = "rgb"+'('+RGBColor[0].value+','+RGBColor[1].value+','+RGBColor[2].value+')';
+            mouse_word[i].style.backgroundColor = "rgb"+'('+(RGBColor[0].value-10)+','+(parseInt(RGBColor[1].value,10)+2) +','+(RGBColor[2].value-6)+')';
+            mouse_word[i].style.color = "rgb"+'('+(parseInt(RGBColor[0].value,10)+1)+','+(RGBColor[1].value-60)+','+(parseInt(RGBColor[2].value,10)+2)+')';
         })
         mouse_word[i].addEventListener('mouseleave',function(){
         mouse_word[i].style.backgroundColor = '';
+        mouse_word[i].style.color = '';
         })
     }
 }
