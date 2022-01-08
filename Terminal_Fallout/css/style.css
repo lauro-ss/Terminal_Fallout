@@ -67,6 +67,26 @@ nav ul li {
 nav ul li:last-child {
   padding-top: 50px;
 }
+#Predefinido {
+  display: flex;
+  flex-direction: row;
+  padding-top: 8px;
+}
+#verde {
+  color: rgb(19, 192, 25);
+}
+#laranja {
+  color: rgb(199, 145, 25);
+}
+#azul {
+  color: rgb(61, 166, 200);
+}
+#roxo {
+  color: rgb(160, 80, 175);
+}
+.fa-square {
+  padding-left: 12px;
+}
 
 .menu-terminal {
   display: block;
