@@ -22,6 +22,7 @@ function showOptions(){
 function changeColor(){
     let RGBColor = document.getElementsByClassName('RGBColors');
     let mainColor = document.getElementsByTagName('main');
+    let mouse_word = document.getElementsByClassName('codigo');
     for(let i = 0; i < 3; i++){
         if(RGBColor[i].value > 255){
             RGBColor[i].value = 255;
@@ -34,5 +35,14 @@ function changeColor(){
     mainColor[0].style.color = "rgb"+'('+RGBColor[0].value+','+RGBColor[1].value+','+RGBColor[2].value+')'
     for(let i = 0; i < 3; i++){
         RGBColor[i].style.color = "rgb"+'('+RGBColor[0].value+','+RGBColor[1].value+','+RGBColor[2].value+')'
+    }
+    for(let i = 0; i <= 56; i++){
+        mouse_word[i].addEventListener('mouseover', function(){
+            mouse_word[i].style.backgroundColor = "rgb"+'('+RGBColor[0].value+','+RGBColor[1].value+','+RGBColor[2].value+')';
+            mouse_word[i].style.color = "rgb"+'('+RGBColor[0].value+','+RGBColor[1].value+','+RGBColor[2].value+')';
+        })
+        mouse_word[i].addEventListener('mouseleave',function(){
+        mouse_word[i].style.backgroundColor = '';
+        })
     }
 }
