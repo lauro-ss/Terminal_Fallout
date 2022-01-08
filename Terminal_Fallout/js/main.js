@@ -1,13 +1,16 @@
 function teste(indice){
     let teste = document.getElementsByTagName('p');
 }
-function getWord(indice){
-    if(indice != -1){
-        let mouse_word = document.getElementsByClassName('codigo');
-        console.log(mouse_word[indice].innerHTML);
-        document.getElementById('test_word').innerHTML = '>'+ mouse_word[indice].innerText;
-    }else{
-        document.getElementById('test_word').innerHTML = '>';
+function getWord(){
+    let mouse_word = document.getElementsByClassName('codigo');
+    for(let i = 0; i < mouse_word.length; i++){
+       
+        mouse_word[i].addEventListener('mouseenter', function(){
+            document.getElementById('test_word').innerHTML = '>'+ mouse_word[i].innerText;
+        })
+        mouse_word[i].addEventListener('mouseleave',function(){
+            document.getElementById('test_word').innerHTML = '>';
+        })
     }
 }
 function showOptions(){
