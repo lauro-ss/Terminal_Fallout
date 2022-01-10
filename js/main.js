@@ -1,16 +1,23 @@
-function teste(indice){
-    let teste = document.getElementsByTagName('p');
-}
 function getWord(){
     let mouse_word = document.getElementsByClassName('codigo');
     for(let i = 0; i < mouse_word.length; i++){
-       
         mouse_word[i].addEventListener('mouseenter', function(){
             document.getElementById('test_word').innerHTML = '>'+ mouse_word[i].innerText;
         })
         mouse_word[i].addEventListener('mouseleave',function(){
             document.getElementById('test_word').innerHTML = '>';
         })
+    }
+}
+
+let word_d = document.querySelector('#cod-direita');
+let word_e = document.querySelector('#cod-esquerda');
+word_d.addEventListener('click',processWord);
+word_e.addEventListener('click',processWord);
+function processWord(e){
+    if(e.target !== e.currentTarget){
+        if(e.target.innerText[0] !== '0')
+            console.log(e.target.innerText);
     }
 }
 function showOptions(){
@@ -47,7 +54,7 @@ function changeColor(){
     for(let i = 0; i < mouse_word.length; i++){
         mouse_word[i].addEventListener('mouseover', function(){
             mouse_word[i].style.backgroundColor = "rgb"+'('+(RGBColor[0].value-10)+','+(parseInt(RGBColor[1].value,10)+2) +','+(RGBColor[2].value-6)+')';
-            mouse_word[i].style.color = "rgb"+'('+(parseInt(RGBColor[0].value,10)+1)+','+(RGBColor[1].value-60)+','+(parseInt(RGBColor[2].value,10)+2)+')';
+            mouse_word[i].style.color = "rgb"+'('+(17)+','+(17)+','+(17)+')';
         })
         mouse_word[i].addEventListener('mouseleave',function(){
         mouse_word[i].style.backgroundColor = '';
@@ -73,7 +80,7 @@ function changeColorPred(r,g,b){
     for(let i = 0; i < mouse_word.length; i++){
         mouse_word[i].addEventListener('mouseover', function(){
             mouse_word[i].style.backgroundColor = "rgb"+'('+(r-10)+','+(parseInt(g,10)+2) +','+(b-6)+')';
-            mouse_word[i].style.color = "rgb"+'('+(parseInt(r,10)+1)+','+(g-60)+','+(parseInt(b,10)+2)+')';
+            mouse_word[i].style.color = "rgb"+'('+(17)+','+(17)+','+(17)+')';
         })
         mouse_word[i].addEventListener('mouseleave',function(){
         mouse_word[i].style.backgroundColor = '';

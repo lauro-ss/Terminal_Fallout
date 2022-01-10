@@ -22,7 +22,6 @@ body {
 a {
   color: inherit;
 }
-
 .guide-buttons {
   line-height: 25px;
   width: 20px;
@@ -168,7 +167,7 @@ header .display-chances {
 }
 .codigo:hover {
   background-color: #1ac315;
-  color: #164317;
+  color: #111111;
 }
 
 .verifi {
