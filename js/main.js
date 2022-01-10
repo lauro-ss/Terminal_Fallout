@@ -16,10 +16,11 @@ word_d.addEventListener('click',processWord);
 word_e.addEventListener('click',processWord);
 function processWord(e){
     if(e.target !== e.currentTarget){
-        if(e.target.innerText[0] !== '0')
-            console.log(e.target.innerText);
+            document.getElementById('words-1').innerHTML += '>'+ e.target.innerText;
+        
     }
 }
+
 function showOptions(){
     let checkBox = document.getElementById('check');
     let menu = document.getElementById('menu-options');

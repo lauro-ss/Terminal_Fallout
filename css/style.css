@@ -59,6 +59,7 @@ ul li p {
   border-style: none;
   width: 32px;
 }
+/*esconder setas do input*/
 /*outros navegadores*/
 #Cor input::-webkit-outer-spin-button,
 #Cor input::-webkit-inner-spin-button {
@@ -68,6 +69,7 @@ ul li p {
 #Cor input[type="number"] {
   -moz-appearance: textfield;
 }
+/*=====================*/
 nav ul {
   padding-top: 9px;
   padding-left: 20px;
@@ -117,7 +119,7 @@ nav ul li:last-child {
   margin: 0 auto;
   margin-top: 18px;
   width: 725px;
-  height: 615px;
+  height: 620px;
   border-radius: 15px;
   background-color: #111111;
   cursor: context-menu;
@@ -148,33 +150,55 @@ header .display-chances {
 .interacao {
   display: flex;
   flex-direction: row;
-  width: 603px;
-  height: 500px;
-  margin-top: 8px;
+  width: 715px;
+  height: 517px;
 }
 .conteudos {
-  width: 300px;
+  width: 230px;
   padding: 10px;
 }
 .conteudos p {
-  display: inline-block;
+  display: inline;
+  line-height: 32px;
 }
-
+.memoria {
+  line-height: 32px;
+  padding: 10px 0px 0px 10px;
+}
+#mem-2 {
+  padding: 10px 0px 0px 0px;
+}
 .codigo {
   margin-right: -6px;
   padding-top: 5px;
   padding-bottom: 5px;
+  /*remove o azul de varios clicks */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /*============================= */
 }
 .codigo:hover {
   background-color: #1ac315;
   color: #111111;
 }
-
+.cod-control {
+  word-wrap: break-word;
+  word-break: break-all;
+  width: 160px;
+}
 .verifi {
   display: flex;
   flex-direction: column-reverse;
-  width: 100px;
-  height: 43px;
-  margin-top: 458px;
-  margin-left: 10px;
+  width: 205px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 19px;
+}
+.words {
+  word-break: break-all;
+  word-wrap: break-word;
 }
