@@ -95,7 +95,7 @@ nav ul li:last-child {
   border-style: solid;
   border-width: 7px;
   border-radius: 3px;
-  border-color: rgb(199, 145, 25);
+  border-color: rgb(199, 130, 25);
 }
 #azul {
   border-style: solid;
@@ -198,7 +198,7 @@ header .display-chances {
   text-overflow: ellipsis;
   margin-top: 19px;
 }
-.words {
+#words {
   word-break: break-all;
   word-wrap: break-word;
 }

@@ -1,3 +1,15 @@
+let total_words = document.getElementsByClassName('codigo');
+let numb_words = 0;
+let indice_words = [];
+for(let i = 0; i < total_words.length; i++){
+    if(total_words[i].textContent.length > 2){
+        indice_words[numb_words] = i;
+        numb_words++;
+    }
+}
+let indice_random = Math.floor(Math.random() * numb_words);
+total_words[indice_words[indice_random]].value = true;
+let true_word = total_words[indice_words[indice_random]].textContent;
 function getWord(){
     let mouse_word = document.getElementsByClassName('codigo');
     for(let i = 0; i < mouse_word.length; i++){
@@ -16,10 +28,30 @@ word_d.addEventListener('click',processWord);
 word_e.addEventListener('click',processWord);
 function processWord(e){
     if(e.target !== e.currentTarget){
-            document.getElementById('words-1').innerHTML += '>'+ e.target.innerText;
+        if(e.target.value){
+            /*palavra correta*/
+            console.log(typeof e.target.value);
+        }else{
+            let tag_words = document.getElementById('words');
+            tag_words.innerHTML += '>'+e.target.textContent + ' </br> '+'>Acesso</br>Negado.' + '</br>'+ 
+            '>Aproximação=' + compWords(e.target.textContent) + '</br>';
+            
+        }
         
     }
 }
+function compWords(palavra){
+    let cont = 0;
+    for(let i = 0; i < palavra.length; i++){
+        for(let c = 0; c < true_word.length; c++){
+            if(palavra[i] == true_word[c]){
+                cont++;
+            }
+        }
+    }
+    return cont;
+}
+
 
 function showOptions(){
     let checkBox = document.getElementById('check');
