@@ -202,3 +202,25 @@ header .display-chances {
   word-break: break-all;
   word-wrap: break-word;
 }
+#mensagem_final {
+  padding: 223px 0px 0px 0px;
+  text-align: center;
+}
+#ficha_final {
+  padding-top: 120px;
+  display: grid;
+  grid-template-columns: 247px 214px;
+  align-items: center;
+  width: 462px;
+  margin: 0 auto;
+}
+#ficha_final > nav ul {
+  padding-top: 1px;
+  padding-left: 12px;
+}
+#ficha_final > nav ul li {
+  display: inline;
+}
+#mensagem {
+  display: none;
+}

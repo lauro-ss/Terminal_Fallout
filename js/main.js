@@ -30,12 +30,38 @@ function processWord(e){
     if(e.target !== e.currentTarget){
         if(e.target.value){
             /*palavra correta*/
-            console.log(typeof e.target.value);
+            document.getElementById('Robco').style.display = 'none';
+            let display_none = document.getElementsByClassName('display-chances');
+            display_none[0].style.display = 'none'
+            display_none = document.getElementsByClassName('options');
+            display_none[0].style.display = 'none'
+            display_none = document.getElementsByClassName('interacao');
+            display_none[0].style.display = 'none'
+
+            document.getElementById('menu-options').style.display = 'none';
+
+            display_none = document.getElementById('mensagem');
+            display_none.style.display = 'block';
         }else{
-            let tag_words = document.getElementById('words');
-            tag_words.innerHTML += '>'+e.target.textContent + ' </br> '+'>Acesso</br>Negado.' + '</br>'+ 
-            '>Aproximação=' + compWords(e.target.textContent) + '</br>';
-            
+            if(e.target.textContent.length != true_word.length){
+                document.getElementById('words').innerHTML += e.target.innerHTML+ '</br>'+ '>Erro' + '</br>';
+            }else{
+                let tag_words = document.getElementById('words');
+                let tag_blocos = document.getElementsByClassName('blocos');
+                tag_words.innerHTML += '>'+e.target.textContent + ' </br> '+'>Acesso</br>Negado.' + '</br>'+ 
+                '>Aproximação=' + compWords(e.target.textContent) + '</br>';
+                for(let i = tag_blocos.length-1; i >= 0; i--){
+                    if(tag_blocos[i].textContent.length > 0){
+                        tag_blocos[i].textContent = '';
+                        i = -1;
+                    }
+                }
+                if(tag_blocos[0].textContent.length == 0){
+                    /*bloqueio de terminal*/
+                    word_d.removeEventListener('click',processWord);
+                    word_e.removeEventListener('click',processWord);
+                }
+            }
         }
         
     }
@@ -43,10 +69,8 @@ function processWord(e){
 function compWords(palavra){
     let cont = 0;
     for(let i = 0; i < palavra.length; i++){
-        for(let c = 0; c < true_word.length; c++){
-            if(palavra[i] == true_word[c]){
-                cont++;
-            }
+        if(palavra[i] == true_word[i]){
+            cont++;
         }
     }
     return cont;
